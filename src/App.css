@@ -67,3 +67,17 @@
   font-size: 30px;
   text-align: center;
 }
+
+/* Default image */
+.neckimg {
+  width: 100%;
+  height: auto;
+  content: url("/rajayoga2.png");
+}
+
+/* Change image for mobile screens below 315px */
+@media screen and (max-width: 425px) {
+  .neckimg {
+    content: url("/rajayoga1.png");
+  }
+}
