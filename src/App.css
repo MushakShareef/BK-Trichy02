@@ -2,70 +2,78 @@
 
 
 
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-
-.headTop{
-    display: flex;
-    flex-direction: row;
-    background-color: #283618;
-    /* justify-content: space-between; */
-    align-items: center;
-    color: aliceblue;
-    width: auto;
-    height: 100px;
+.headTop {
+  display: flex;
+  flex-direction: row;
+  background-color: #283618;
+  justify-content: space-between; /* Re-enabled for better spacing */
+  align-items: center;
+  color: aliceblue;
+  width: 100%;
+  height: 100px;
+  padding: 0 20px; /* Add padding instead of fixed positioning */
 }
 
-.headTop>.headimg{
-  position: relative;
-  left: 100px;
+.headTop > .headimg {
+  /* Remove fixed positioning */
+  flex-shrink: 0;
 }
 
-.headTop>h1{
-  position: relative;
-  left: 100px;
+.headTop > h1 {
+  /* Remove fixed positioning */
+  margin-left: 20px;
+  flex-grow: 1;
 }
 
-.headTop>.headlist>ul{
+.headTop > .headlist > ul {
   display: flex;
   flex-direction: row;
   list-style-type: none;
+  gap: 20px; /* Use gap instead of padding for spacing */
 }
 
-.headTop>.headlist>ul>li{
-  padding: 50px;
+.headTop > .headlist > ul > li {
+  padding: 10px 20px; /* Reduced padding */
   font-size: 24px;
-  position: relative;
-  left: 350px;
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
-.chest{
+.chest {
   background-color: #606c38;
+  display: flex; /* Use flexbox instead of float */
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
 }
 
-.chest>.chestimg{
-  float: right;
+.chest > .chestimg {
+  /* Remove float, use flex instead */
   padding: 5px;
   border-radius: 10px;
+  flex: 0 0 auto;
 }
 
-.chest>.chestPara{
+.chest > .chestPara {
   padding: 15px;
   text-align: justify;
   font-size: 24px;
+  flex: 1;
+  min-width: 300px; /* Ensure minimum width */
 }
 
-
-
-.footer>.footerh4{
+.footer > .footerh4 {
   background-color: #132a13;
   color: aliceblue;
   font-size: 30px;
   text-align: center;
+  padding: 20px;
 }
 
 /* Default image */
@@ -75,9 +83,148 @@
   content: url("/rajayoga2.png");
 }
 
-/* Change image for mobile screens below 315px */
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .headTop {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+  
+  .headTop > h1 {
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .headTop > .headlist > ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .headTop > .headlist > ul > li {
+    padding: 10px;
+    font-size: 20px;
+  }
+  
+  .chest {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  .chest > .chestPara {
+    font-size: 20px;
+    padding: 10px;
+  }
+  
+  .footer > .footerh4 {
+    font-size: 24px;
+    padding: 15px;
+  }
+}
+
 @media screen and (max-width: 425px) {
   .neckimg {
     content: url("/rajayoga1.png");
+  }
+  
+  .headTop > .headlist > ul > li {
+    font-size: 18px;
+    padding: 8px;
+  }
+  
+  .chest > .chestPara {
+    font-size: 18px;
+  }
+  
+  .footer > .footerh4 {
+    font-size: 20px;
+    padding: 10px;
+  }
+}
+
+/* Ultra-small screens (320px and below) */
+@media screen and (max-width: 320px) {
+  .headTop {
+    height: auto;
+    min-height: 80px;
+    padding: 10px 5px;
+  }
+  
+  .headTop > h1 {
+    font-size: 18px;
+    margin: 5px 0;
+    text-align: center;
+    word-break: break-word;
+  }
+  
+  .headTop > .headimg {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .headTop > .headlist > ul {
+    gap: 5px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .headTop > .headlist > ul > li {
+    font-size: 14px;
+    padding: 5px 8px;
+    white-space: nowrap;
+  }
+  
+  .chest {
+    padding: 10px 5px;
+    gap: 10px;
+  }
+  
+  .chest > .chestPara {
+    font-size: 16px;
+    padding: 8px;
+    line-height: 1.4;
+    min-width: unset;
+  }
+  
+  .chest > .chestimg {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    padding: 3px;
+  }
+  
+  .footer > .footerh4 {
+    font-size: 18px;
+    padding: 8px 5px;
+    word-break: break-word;
+  }
+  
+  .neckimg {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Extra safety for very small screens */
+@media screen and (max-width: 280px) {
+  .headTop > h1 {
+    font-size: 16px;
+  }
+  
+  .headTop > .headlist > ul > li {
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+  
+  .chest > .chestPara {
+    font-size: 14px;
+    padding: 5px;
+  }
+  
+  .footer > .footerh4 {
+    font-size: 16px;
+    padding: 6px 3px;
   }
 }
