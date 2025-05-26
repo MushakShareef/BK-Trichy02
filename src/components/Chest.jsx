@@ -7,7 +7,7 @@ import React from 'react'
 const Chest = () => {
   return (
     <div className='chest'>
-        <img className='chestimg' src="./centre01.jpg" alt="centre" width={400} height={885}/>
+        <img className='chestimg' src="./centre01.jpg" alt="centre" width={425} height={885}/> 
         <p className='chestPara'>
             Prajapita BrahmaKumaris Ishwariya Vishwa Vidyalaya (also called Brahma Kumaris in short) is a unique Vishwa Vidyalaya (university) and a well known spiritual value based educational institutional institution which has gained global acceptance and unique international recognition. <br/><br/><br/>
             The Brahmakumaris. 
