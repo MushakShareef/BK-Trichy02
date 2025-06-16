@@ -1,0 +1,9 @@
+
+
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+Sitemap: https://bk-trichy02.vercel.app/sitemap.xml
